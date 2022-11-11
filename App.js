@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import BottomNav from './navigations/BottomNav';
 import DetailsScreen from './screens/DetailsScreen';
 import HomeScreen from './screens/HomeScreen';
 
@@ -15,6 +16,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{header: () => null}}>
         <Stack.Screen name='Home' component={HomeScreen} />
         <Stack.Screen name='Details' component={DetailsScreen} />
+        <Stack.Screen name="Bottom" component={BottomNav} />
       </Stack.Navigator>
     </NavigationContainer>
   );

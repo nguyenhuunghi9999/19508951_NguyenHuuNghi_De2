@@ -15,35 +15,46 @@ const DetailsScreen = ({navigation, route}) => {
             </View>
         <View style = {styles.imgContainer}>
             <Image source={plant.img} style ={{resizeMode:"contain", flex:1}} />
+            <NumericInput />
         </View>
         <View style ={styles.detailContainer}>
-            <View style ={{marginLeft: 20, flexDirection: "row", alignItems: "flex-end"}}>
-                <View style ={styles.line}/>
-                <Text style ={{fontSize: 18, fontWeight:'bold'}}>Best Choice</Text>
-            </View>
             <View style ={{marginLeft:20, marginTop:20, flexDirection:"row", justifyContent:"space-between", alignItems:'center'}}>
-                <Text style ={{fontSize:22, fontWeight:'bold'}}>{plant.name}</Text>
-                <View style = {styles.priceTag}>
-                    <Text style = {{marginLeft:15, color:"white", fontSize:16, fontWeight:"bold"}}>{plant.price}$</Text>
-                </View>
+                <Text style ={{fontSize:22, fontWeight:'bold', color:"gray"}}>{plant.name}</Text>
             </View>
+            <View >
+                    <Text style = {{marginLeft:20, color:"black", fontSize:30, fontWeight:"bold"}}>${plant.price}</Text>
+                </View>
             <View style = {{paddingHorizontal:20, marginTop:10}}>
-                <Text style ={{fontSize:20, fontWeight: "bold"}}>About</Text>
+                <Text style ={{fontSize:20, fontWeight: "bold"}}>Color</Text>
+                <View style={{flexDirection: "row",justifyContent: "space-between"}}>
+                    <View style={{backgroundColor:"orange", height:20, width:20, marginLeftLeft:20}}>
+                    </View>
+                    <View style={{backgroundColor:"green", height:20, width:20, marginLeftLeft:20}}>
+                    </View>
+                </View>
+                <Text style ={{fontSize:20, fontWeight: "bold"}}>Size</Text>
+                <View style={{flexDirection: "row",justifyContent: "space-between"}}>
+                    <View style={{backgroundColor:"gray", height:40, width:40, marginLeftLeft:20}}>
+                    <Text>XS</Text>
+                    </View>
+                    <View style={{backgroundColor:"gray", height:40, width:40, marginLeftLeft:20}}>
+                    <Text>X</Text>
+                    </View>
+                    <View style={{backgroundColor:"gray", height:40, width:40, marginLeftLeft:20}}>
+                    <Text>M</Text>
+                    </View>
+                    <View style={{backgroundColor:"gray", height:40, width:40, marginLeftLeft:20}}>
+                    <Text>L</Text>
+                    </View>
+                    <View style={{backgroundColor:"gray", height:40, width:40, marginLeftLeft:20}}>
+                    <Text>XL</Text>
+                    </View>
+                </View>
                 <Text style ={{color:"grey", fontSize:14, lineHeight: 22, marginTop:20 }}>{plant.about}</Text>
                 <View style ={{marginTop:20, flexDirection:'row',justifyContent:"space-between"}}>
-                    <View style ={{flexDirection: "row", alignItems :'center'}}>
-                        {/* <View style = {styles.borderBtn}>
-                            <Text style ={styles.borderBtnText}>-</Text>
-                        </View>
-                        <Text style = {{fontSize: 20, marginHorizontal:10,fontWeight: 'bold'}}>1</Text>
-                        <View style = {styles.borderBtn}>
-                            <Text style ={styles.borderBtnText}>+</Text>
-                        </View> */}
-                        <NumericInput />
-                    </View>
                     <View style = {styles.buyBtn}>
                         <Text style ={{color: 'white', fontSize: 18, fontWeight:'bold' }} >
-                            Buy
+                            Add to cart
                         </Text>
                     </View>
                 </View>
@@ -62,6 +73,7 @@ const styles = StyleSheet.create({
     },
     imgContainer:{
         flex:0.45,
+        flexDirection:"row",
         marginTop: 20,
         justifyContent:'center',
         alignItems:'center'
@@ -83,7 +95,7 @@ const styles = StyleSheet.create({
         marginRight:3
     },
     priceTag: {
-        backgroundColor: "green",
+        backgroundColor: "#f542e3",
         width:80,
         height:40,
         borderTopLeftRadius:25,
@@ -104,9 +116,9 @@ const styles = StyleSheet.create({
         fontSize: 28
     },
     buyBtn: {
-        width:150,
+        width:"100%",
         height:50,
-        backgroundColor: "green",
+        backgroundColor: "#f542e3",
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5

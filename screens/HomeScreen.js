@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons, Entypo, Feather } from '@expo/vector-icons'; 
 import { TextInput } from "react-native-gesture-handler";
 import plants from "../consts/plants";
+import BottomNav from "../navigations/BottomNav";
 
 const width = Dimensions.get('screen').width/2-30;
 
@@ -69,6 +70,7 @@ const HomeScreen = ({navigation}) => {
                 renderItem={({item}) => {
                     return <Card plant={item} />;
                 }} />
+                {/* <BottomNav /> */}
         </SafeAreaView>
     )
 };
